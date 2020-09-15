@@ -5,13 +5,16 @@
     "outDir": "./out-tsc/spec",
     "types": [
       "jest",
-      "node"
+      "node",
+      "@types/jest"
     ]
   },
   "files": [
     "src/polyfills.ts"
   ],
   "include": [
+    "setupJest.ts",
+    "jest-global-mocks.ts",
     "src/**/*.spec.ts",
     "src/**/*.d.ts"
   ]
