@@ -1,4 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { UserService } from './../../shared/services/user/user.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { BrowserModule } from '@angular/platform-browser';
+import { ComponentFixture, ComponentFixtureAutoDetect, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
 
@@ -8,9 +11,17 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [HomeComponent],
+      imports: [
+        BrowserModule,
+        HttpClientTestingModule
+      ],
+      providers: [
+        UserService,
+        { provide: ComponentFixtureAutoDetect, useValue: true }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

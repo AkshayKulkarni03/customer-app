@@ -62,13 +62,13 @@ describe('AuthService', () => {
   });
 
   it('should regiser new user with post service call', (done) => {
-    const loginInput = { userName: 'test1', email: 'test@email.com', password: 'test@password' };
+    const registerUserInput = { userName: 'test1', email: 'test@email.com', password: 'test@password' };
     const userData = {
       userName: 'test1',
       roles: ['ROLE_USER']
     };
 
-    service.register(loginInput).subscribe(user => {
+    service.register(registerUserInput).subscribe(user => {
       expect(user.userName).toEqual('test1');
       expect(user.roles).toEqual(['ROLE_USER']);
       done();
@@ -84,16 +84,16 @@ describe('AuthService', () => {
   });
 
   it('should fail to register new user for POST service call', () => {
-    const loginInput = { userName: 'test1', email: 'test email.com', password: 'test@password' };
+    const registerUserInput = { userName: 'test1', email: 'test email.com', password: 'test@password' };
 
-    service.login(loginInput).subscribe(
+    service.register(registerUserInput).subscribe(
       () => fail('should throw error for service call'),
       (error: HttpErrorResponse) => {
         expect(error.status).toEqual(400);
         expect(error.type).toEqual('Error 400');
       });
 
-    const req = httpMock.expectOne(`${backenURL}signin`);
+    const req = httpMock.expectOne(`${backenURL}signup`);
 
     expect(req.request.method).toEqual('POST');
     expect(req.cancelled).toEqual(false);
