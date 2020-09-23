@@ -1,6 +1,6 @@
 # SampleCustomerApp
 
-[![Coverage Status](https://coveralls.io/repos/github/AkshayKulkarni03/customer-app/badge.svg?branch=master)](https://coveralls.io/github/AkshayKulkarni03/customer-app?branch=master)
+[![Build Status](https://travis-ci.com/AkshayKulkarni03/customer-app.svg?branch=master)](https://travis-ci.com/AkshayKulkarni03/customer-app) | [![Coverage Status](https://coveralls.io/repos/github/AkshayKulkarni03/customer-app/badge.svg?branch=master)](https://coveralls.io/github/AkshayKulkarni03/customer-app?branch=master)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
 
