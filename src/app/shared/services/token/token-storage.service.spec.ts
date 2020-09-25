@@ -24,11 +24,13 @@ describe('TokenStorageService', () => {
     };
   })();
 
+  beforeAll(() => {
+    Object.defineProperty(window, 'sessionStorage', { value: mockSessionStorage, writable: true });
+  });
+
   beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(TokenStorageService);
-
-    Object.defineProperty(window, 'sessionStorage', { value: mockSessionStorage, writable: true });
   });
 
   it('should be created', () => {
